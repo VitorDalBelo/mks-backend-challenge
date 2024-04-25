@@ -11,6 +11,14 @@ async function bootstrap() {
   .setTitle('API Filmes')
   .setDescription('API criada como parte do teste técnico da empresa MKS Desenvolvimento de Sistemas e Empreendimentos Ltda')
   .setVersion('1.0')
+  .addSecurity('basic',{
+    type:"http",
+    scheme:'basic'
+  })
+  .addSecurity('JWT',{
+    type:"http",
+    scheme:"Bearer"
+  })
   .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

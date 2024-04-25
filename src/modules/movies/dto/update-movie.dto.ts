@@ -16,13 +16,13 @@ export class UpdateMovieDto {
     synopsis?: string;
     private static schema = Yup.object().shape({
         title: Yup.string()
-        .max(255, 'O campo title deve ter no máximo 225 caracteres'),
+        .max(255, 'O campo title deve ter no máximo 255 caracteres'),
         director: Yup.string()
-        .max(255, 'O campo director deve ter no máximo 225 caracteres'),
+        .max(255, 'O campo director deve ter no máximo 255 caracteres'),
         release_date: Yup.string()
         .matches(/^\d{4}-\d{2}-\d{2}$/, 'O campo release_date deve estar no formato YYYY-MM-DD'),
         genre: Yup.string()
-        .max(255, 'O campo genre deve ter no máximo 225 caracteres'),
+        .max(255, 'O campo genre deve ter no máximo 255 caracteres'),
     });
 
     public static async validate(value: any,options?: Yup.ValidateOptions<Yup.AnyObject>) : Promise<Partial<UpdateMovieDto>>{

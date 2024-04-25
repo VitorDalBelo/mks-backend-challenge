@@ -3,6 +3,7 @@ import { MoviesModule } from './modules/movies/movies.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfigService } from './config/datasource';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { DatabaseConfigService } from './config/datasource';
       useClass: DatabaseConfigService,
       inject: [DatabaseConfigService]
     }),
-    MoviesModule
+    MoviesModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],

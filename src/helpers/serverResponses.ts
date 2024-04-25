@@ -1,4 +1,5 @@
-import { GetMovieDto } from "src/modules/movies/dto/get-movie.dto"
+import { GetAccessTokenDto } from "../modules/auth/dto/auth-dtos/get-access_token-auth.dto"
+import { GetMovieDto } from "../modules/movies/dto/get-movie.dto"
 
 
 export const GetMovie = {
@@ -6,6 +7,18 @@ export const GetMovie = {
   description: 'Consultar Movies',
   type: GetMovieDto
 }
+export const UserCreated = {
+  status: 201,
+  description: 'Usuário Criado',
+  type: GetAccessTokenDto
+}
+
+export const LoginOk = {
+  status: 200,
+  description: 'Login Ok',
+  type: GetAccessTokenDto
+}
+
 export const MovieCreated = {
   status: 201,
   description: 'Movie Cadastrado',

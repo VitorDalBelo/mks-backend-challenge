@@ -16,16 +16,16 @@ export class CreateMovieDto {
     private static schema = Yup.object().shape({
         title: Yup.string()
         .required('O campo title é obrigatório')
-        .max(255, 'O campo title deve ter no máximo 225 caracteres'),
+        .max(255, 'O campo title deve ter no máximo 255 caracteres'),
         director: Yup.string()
         .required('O campo director é obrigatório')
-        .max(255, 'O campo director deve ter no máximo 225 caracteres'),
+        .max(255, 'O campo director deve ter no máximo 255 caracteres'),
         release_date: Yup.string()
         .required('O campo release_date é obrigatório')
         .matches(/^\d{4}-\d{2}-\d{2}$/, 'O campo release_date deve estar no formato YYYY-MM-DD'),
         genre: Yup.string()
         .required('O campo genre é obrigatório')
-        .max(255, 'O campo genre deve ter no máximo 225 caracteres'),
+        .max(255, 'O campo genre deve ter no máximo 255 caracteres'),
         synopsis: Yup.string()
         .required('O campo synopsis é obrigatório'),
     });
