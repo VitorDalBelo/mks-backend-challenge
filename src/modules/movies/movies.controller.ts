@@ -3,7 +3,7 @@ import { MoviesService } from './movies.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { ApiResponse, ApiSecurity, ApiTags } from '@nestjs/swagger';
-import { BadRequest, GetMovie, GetMovies, InternalServerError, MovieCreated, NoContent, NotFound, Unauthorized } from 'src/helpers/serverResponses';
+import { BadRequest, GetMovie, GetMovies, InternalServerError, MovieCreated, NoContent, NotFound, Unauthorized } from '../../helpers/serverResponses';
 import { AuthGuard } from '@nestjs/passport';
 
 @ApiTags('movies')
