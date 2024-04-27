@@ -13,9 +13,9 @@ services:
     restart: always
     shm_size: 128mb
     ports:
-      - 5091:5432
+      - 5432:5432
     expose:
-      - 5091
+      - 5432
     networks:
       - challenge-network
     volumes:
@@ -53,7 +53,7 @@ services:
       - redis
     environment:
       DB_HOST: db
-      DB_PORT: 5091
+      DB_PORT: 5432
       DB_USER: postgres 
       DB_PASSWORD: 1010
       DB_NAME: testeDB
