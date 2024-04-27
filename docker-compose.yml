@@ -6,6 +6,9 @@ networks:
     name: challenge-network
     driver: bridge
 
+volumes:
+  pgVolume:
+
 services:
 
   db:
@@ -18,6 +21,7 @@ services:
       - challenge-network
     volumes:
       - "$PWD/my-postgres.conf:/etc/postgresql/postgresql.conf"
+      - pgVolume:/var/lib/postgresql/data
     command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
     environment:
       POSTGRES_PASSWORD: 1010
@@ -44,8 +48,6 @@ services:
     restart: always
     ports:
       - 3000:3000
-    expose:
-      - 3000
     depends_on:
       - db
       - redis
